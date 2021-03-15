@@ -1,2 +1,17 @@
 import React from 'react';
-import {BrowserRoute, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import Main from './pages/Main';
+import Table from './pages/table';
+
+export default function Routes() {
+
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={Main} />
+                <Route path="/Tabela" component={Table} />
+            </Switch>
+        </BrowserRouter>
+    )
+}

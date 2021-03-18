@@ -1,0 +1,21 @@
+.App {
+    text-align: center;
+  }
+
+  .btn-Marcador{
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #61dafb;
+    border-radius: 6px;
+    color: #000000;
+    font-weight: bold;
+    background-color: #61dafb;
+    transition: ease-in 0.3s;
+  }
+
+  .btn-Marcador:hover{
+      cursor: pointer;
+      background-color: #00a2cf;
+      color: #000000;
+  }

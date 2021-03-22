@@ -37,13 +37,17 @@ export default function Main() {
             <label>Nome :</label>
             <input type="text" id="user" onChange={onClick} value={agendar.user} placeholder="Nome..." required />
             <br />
-            <label>Dia :</label>
-            <input type="date" id="dia" min="2021-03-18" onChange={onClick} value={agendar.dia} required />
-            <br />
-            <label>Horario :</label>
-            <input id="hora" type="time" name="hora" onChange={onChange} value={hora}
-                min="09:00" max="18:00" required />
-            <br />
+            <div className="Box-dia">
+                <label>Dia :</label>
+                <input type="date" id="dia" min="2021-03-18" onChange={onClick} value={agendar.dia} required />
+                <br />
+            </div>
+            <div className="Box-hora">
+                <label>Hora :</label>
+                <input id="hora" type="time" name="hora" onChange={onChange} value={hora}
+                    min="09:00" max="18:00" required />
+                <br />
+            </div>
             <button className="btn-Marcador" onClick={toTable}>Enviar</button>
         </div>
     )

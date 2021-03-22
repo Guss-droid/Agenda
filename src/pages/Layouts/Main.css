@@ -2,20 +2,28 @@
     text-align: center;
   }
 
+  .Box-hora{
+    padding-right: 95px;
+  }
+  
+  .Box-dia{
+    padding-right: 13px;
+  }
+
   .btn-Marcador{
     padding: 10px 16px;
     font-size: 14px;
     background-color: transparent;
-    border: 1px solid #61dafb;
+    border: 1px solid #13b1dd;
     border-radius: 6px;
     color: #000000;
     font-weight: bold;
-    background-color: #61dafb;
+    background-color: #13b1dd;
     transition: ease-in 0.3s;
   }
 
   .btn-Marcador:hover{
       cursor: pointer;
-      background-color: #00a2cf;
+      background-color: #0587ac;
       color: #000000;
   }

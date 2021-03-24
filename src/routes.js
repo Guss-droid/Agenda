@@ -14,7 +14,7 @@ export default function Routes() {
                 <Route exact path="/" component={Main} />
                 <Route path="/Tabela" component={Table} />
                 <Route path="/Cancelar" component={Cancel} />
-                <Route path="/Api/Tempo" component={Tempo} />
+                <Route path="/Api" component={Tempo} />
             </Switch>
         </BrowserRouter>
     )

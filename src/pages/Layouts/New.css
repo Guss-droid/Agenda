@@ -1,0 +1,24 @@
+.Todo-Form{
+    border-radius: 7px;
+    padding: 7px;
+    margin-bottom: 20px;
+    align-items: center;
+    font-weight: bold;
+    font-style: italic;
+}
+.Todo-btn{
+    background-color: #388C6E;
+    padding: 7px;
+    border-radius: 7px;
+    margin-left: 8px;
+    font-style: italic;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: ease-in 0.5s;
+}
+
+.Todo-btn:hover{
+    background-color: #227558;
+    color: #000;
+    cursor: pointer;
+}

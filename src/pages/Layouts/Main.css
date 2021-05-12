@@ -1,29 +1,19 @@
 .App {
-    text-align: center;
+    text-align: left;
+    background: #282c34;
   }
 
-  .Box-hora{
-    padding-right: 95px;
-  }
-  
-  .Box-dia{
-    padding-right: 13px;
+  .Todo-junto{
+    background: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    margin-left: 20px;
+    color: white;
   }
 
-  .btn-Marcador{
-    padding: 10px 16px;
-    font-size: 14px;
-    background-color: transparent;
-    border: 1px solid #13b1dd;
-    border-radius: 6px;
-    color: #000000;
+  .tittle{
     font-weight: bold;
-    background-color: #13b1dd;
-    transition: ease-in 0.3s;
-  }
-
-  .btn-Marcador:hover{
-      cursor: pointer;
-      background-color: #0587ac;
-      color: #000000;
+    font-size: 27px;
   }

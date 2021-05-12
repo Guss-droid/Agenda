@@ -1,54 +1,53 @@
 import React, { useState } from 'react';
 import "../Layouts/Main.css"
+import ListItem from '../ListItem/index';
+import NewTaskInput from '../NewTaskItem/index';
 
-export default function Main() {
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
-    const [agendar, setAgendar] = useState({
-        user: '',
-        dia: ''
-    })
+library.add(fas)
 
-    const [hora, setHora] = useState()
+const Main = () => {
+    const [tasks, setTasks] = useState([]);
 
-    function onClick(e) {
-        setAgendar({
-            ...agendar,
-            [e.target.id]: e.target.value
-        })
+    function addNewTask(task) {
+        const itensCopy = Array.from(tasks);
+        itensCopy.push({ id: tasks.length, value: task });
+        setTasks(itensCopy);
     }
 
-    function onChange(e) {
-        setHora(
-            e.target.value
-        )
+    function updateTask({ target }, index) {
+        const itensCopy = Array.from(tasks);
+        itensCopy.splice(index, 1, { id: index, value: target.value });
+        setTasks(itensCopy);
     }
 
-    function toTable() {
-        localStorage.setItem("nome", agendar.user);
-        localStorage.setItem("dia", agendar.dia);
-        localStorage.setItem("hora", hora)
-        localStorage.removeItem("menssagem")
-        window.location.href = "/Tabela"
+    function deleteTask(index) {
+        const itensCopy = Array.from(tasks);
+        itensCopy.splice(index, 1);
+        setTasks(itensCopy);
     }
 
     return (
         <div className="App">
-            <h2>Agendar consulta</h2>
-            <label>Nome :</label>
-            <input type="text" id="user" onChange={onClick} value={agendar.user} placeholder="Nome..." required />
-            <br />
-            <div className="Box-dia">
-                <label>Dia :</label>
-                <input type="date" id="dia" min="2021-03-18" onChange={onClick} value={agendar.dia} required />
+            <div className="Todo-junto">
                 <br />
-            </div>
-            <div className="Box-hora">
-                <label>Hora :</label>
-                <input id="hora" type="time" name="hora" onChange={onChange} value={hora}
-                    min="09:00" max="18:00" required />
+                <text className="tittle">Agenda   <FontAwesomeIcon icon="calendar-check"/></text>
                 <br />
+                <NewTaskInput onSubmit={addNewTask} />
+                {tasks.map(({ id, value }, index) => (
+                    <ListItem
+                        key={id}
+                        value={value}
+                        onChange={(event) => updateTask(event, index)}
+                        onDelete={() => deleteTask(index)}
+                    />
+                ))}
             </div>
-            <button className="btn-Marcador" onClick={toTable}>Enviar</button>
         </div>
     )
 }
+
+export default Main;
